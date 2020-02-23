@@ -17,7 +17,7 @@
 <resources>
     <string name="app_name">ColorMyViews</string>
     <string name="box_two"></string>
-    <string name="button_green">RETRY</string>
+    <string name="retry">RETRY</string>
     <string name="what_is_your_nickname">What is your Nickname?</string>
     <string name="done">Done</string>
     <string name ="Clicks">Clicks:</string>

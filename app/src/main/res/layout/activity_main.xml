@@ -386,7 +386,7 @@
         android:layout_width="113dp"
         android:layout_height="54dp"
         android:layout_marginEnd="@dimen/margin_wide"
-        android:text="@string/button_green"
+        android:text="@string/retry"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"

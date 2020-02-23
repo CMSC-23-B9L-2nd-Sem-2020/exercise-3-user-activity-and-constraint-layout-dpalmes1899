@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     var count = 0
     var text = "Clicks: " + count
     lateinit var countNumber:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -103,6 +104,7 @@ class MainActivity : AppCompatActivity() {
             }
             indicator += array
         }
+
         retryButton.setOnClickListener{retry(twoDimensional,indicator)}
 
         for(item: Int in (0..4)){
@@ -116,6 +118,7 @@ class MainActivity : AppCompatActivity() {
         count ++
         text = "Clicks: " + count
         countNumber.setText(text)
+
         if(indicator[row][col] == 0) {
             view.setBackgroundColor(Color.BLACK)
             indicator[row][col] = 1
