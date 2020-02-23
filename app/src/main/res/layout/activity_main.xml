@@ -21,54 +21,64 @@
     android:id="@+id/constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/box5"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="208dp"
-        android:text="@string/box_two"
+    <EditText
+        android:id="@+id/nickname_edit"
+        style="NameStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:foregroundGravity="center_vertical|center|center_horizontal"
+        android:hint="@string/what_is_your_nickname"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/box2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337" />
+
+    <Button
+        android:id="@+id/done_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="118dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/done"
+        app:layout_constraintBottom_toTopOf="@+id/box2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nickname_edit"
+        app:layout_constraintVertical_bias="0.15" />
 
     <TextView
-        android:id="@+id/box2"
+        android:id="@+id/nickname_text"
+        style="NameStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/box2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/done_button" />
+
+    <TextView
+        android:id="@+id/box"
         style="@style/whiteBox"
         android:layout_width="54dp"
         android:layout_height="48dp"
         android:layout_marginTop="208dp"
         android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box4"
+        app:layout_constraintEnd_toStartOf="@+id/box1"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/box4"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="208dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/box3"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="208dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box4"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -80,8 +90,92 @@
         android:text="@string/box_two"
         app:layout_constraintEnd_toStartOf="@+id/box2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/box"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/box2"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="208dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/box3"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="208dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/box4"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="208dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/box5"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box" />
+
+    <TextView
+        android:id="@+id/box6"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box5"
+        app:layout_constraintTop_toBottomOf="@+id/box1" />
+
+    <TextView
+        android:id="@+id/box7"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box6"
+        app:layout_constraintTop_toBottomOf="@+id/box2" />
+
+    <TextView
+        android:id="@+id/box8"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box7"
+        app:layout_constraintTop_toBottomOf="@+id/box3" />
 
     <TextView
         android:id="@+id/box9"
@@ -92,80 +186,20 @@
         android:text="@string/box_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box7"
-        app:layout_constraintTop_toBottomOf="@+id/box5" />
-
-    <TextView
-        android:id="@+id/box7"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box9"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/box8"
-        app:layout_constraintTop_toBottomOf="@+id/box3" />
-
-    <TextView
-        android:id="@+id/box8"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box6"
         app:layout_constraintTop_toBottomOf="@+id/box4" />
 
     <TextView
-        android:id="@+id/box6"
+        android:id="@+id/box10"
         style="@style/whiteBox"
         android:layout_width="54dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box"
-        app:layout_constraintTop_toBottomOf="@+id/box2" />
-
-    <TextView
-        android:id="@+id/box"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box6"
+        app:layout_constraintEnd_toStartOf="@+id/box11"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/box1" />
-
-    <TextView
-        android:id="@+id/box14"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box13"
-        app:layout_constraintTop_toBottomOf="@+id/box9" />
-
-    <TextView
-        android:id="@+id/box13"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box14"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box12"
-        app:layout_constraintTop_toBottomOf="@+id/box7" />
+        app:layout_constraintTop_toBottomOf="@+id/box5" />
 
     <TextView
         android:id="@+id/box11"
@@ -189,31 +223,31 @@
         app:layout_constraintEnd_toStartOf="@+id/box13"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/box11"
+        app:layout_constraintTop_toBottomOf="@+id/box7" />
+
+    <TextView
+        android:id="@+id/box13"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box12"
         app:layout_constraintTop_toBottomOf="@+id/box8" />
 
     <TextView
-        android:id="@+id/box10"
+        android:id="@+id/box14"
         style="@style/whiteBox"
         android:layout_width="54dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box11"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/box" />
-
-    <TextView
-        android:id="@+id/box17"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box16"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box15"
-        app:layout_constraintTop_toBottomOf="@+id/box12" />
+        app:layout_constraintStart_toEndOf="@+id/box13"
+        app:layout_constraintTop_toBottomOf="@+id/box9" />
 
     <TextView
         android:id="@+id/box15"
@@ -222,13 +256,36 @@
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box17"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box18"
-        app:layout_constraintTop_toBottomOf="@+id/box11" />
+        app:layout_constraintEnd_toStartOf="@+id/box16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box10" />
 
     <TextView
         android:id="@+id/box16"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box15"
+        app:layout_constraintTop_toBottomOf="@+id/box11" />
+
+    <TextView
+        android:id="@+id/box17"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box18"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box16"
+        app:layout_constraintTop_toBottomOf="@+id/box12" />
+
+    <TextView
+        android:id="@+id/box18"
         style="@style/whiteBox"
         android:layout_width="54dp"
         android:layout_height="48dp"
@@ -248,55 +305,8 @@
         android:text="@string/box_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box16"
+        app:layout_constraintStart_toEndOf="@+id/box18"
         app:layout_constraintTop_toBottomOf="@+id/box14" />
-
-    <TextView
-        android:id="@+id/box18"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/box10" />
-
-    <TextView
-        android:id="@+id/box21"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box24"
-        app:layout_constraintTop_toBottomOf="@+id/box19" />
-
-    <TextView
-        android:id="@+id/box24"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box21"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box20"
-        app:layout_constraintTop_toBottomOf="@+id/box16" />
-
-    <TextView
-        android:id="@+id/box23"
-        style="@style/whiteBox"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box20"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box22"
-        app:layout_constraintTop_toBottomOf="@+id/box15" />
 
     <TextView
         android:id="@+id/box20"
@@ -305,10 +315,22 @@
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/box_two"
-        app:layout_constraintEnd_toStartOf="@+id/box24"
+        app:layout_constraintEnd_toStartOf="@+id/box21"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/box23"
-        app:layout_constraintTop_toBottomOf="@+id/box17" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box15" />
+
+    <TextView
+        android:id="@+id/box21"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box22"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box20"
+        app:layout_constraintTop_toBottomOf="@+id/box16" />
 
     <TextView
         android:id="@+id/box22"
@@ -319,29 +341,58 @@
         android:text="@string/box_two"
         app:layout_constraintEnd_toStartOf="@+id/box23"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/box21"
+        app:layout_constraintTop_toBottomOf="@+id/box17" />
+
+    <TextView
+        android:id="@+id/box23"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
+        app:layout_constraintEnd_toStartOf="@+id/box24"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/box22"
         app:layout_constraintTop_toBottomOf="@+id/box18" />
 
-    <Button
-        android:id="@+id/yellow_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_wide"
-        android:text="@string/button_yellow"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/green_button" />
-
-    <Button
-        android:id="@+id/green_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_wide"
-        android:text="@string/button_green"
-        app:layout_constraintBaseline_toBaselineOf="@+id/yellow_button"
+    <TextView
+        android:id="@+id/box24"
+        style="@style/whiteBox"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/box_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/yellow_button" />
+        app:layout_constraintStart_toEndOf="@+id/box23"
+        app:layout_constraintTop_toBottomOf="@+id/box19" />
+
+    <TextView
+        android:id="@+id/click_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Clicks"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/retry_button"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <Button
+        android:id="@+id/retry_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="113dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:text="@string/button_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box22"
+        app:layout_constraintVertical_bias="0.503" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
