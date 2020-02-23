@@ -24,6 +24,20 @@
     android:background="@android:color/holo_blue_bright"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/nickname_text"
+        style="NameStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/nickname_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/nickname_edit"
         style="NameStyle"
@@ -54,20 +68,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nickname_edit"
         app:layout_constraintVertical_bias="0.339" />
-
-    <TextView
-        android:id="@+id/nickname_text"
-        style="NameStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/box2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/done_button" />
 
     <TextView
         android:id="@+id/box"

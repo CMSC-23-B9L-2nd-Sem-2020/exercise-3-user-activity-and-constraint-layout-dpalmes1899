@@ -34,6 +34,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     var count = 0
+    var finished = true
     var text = "Clicks: " + count
     lateinit var countNumber:TextView
 
@@ -335,9 +336,38 @@ class MainActivity : AppCompatActivity() {
                 indicator[row][col+1] = 0
             }
         }
+
+
+        for(i in 0..4){
+            for(j in 0..4){
+                if(indicator[i][j] == 0){
+                    finished = false
+                    break
+                }
+            }
+        }
+
+        if(finished){
+            for(x in 0..4){
+                for(y in 0..4){
+                    twodimensional[x][y].visibility = View.GONE
+                }
+            }
+        }
     }
 
     private fun retry(twoDimensional : List<List<View>>,indicator:Array<Array<Int>>){
+
+        if(finished){
+            for(x in 0..4){
+                for(y in 0..4){
+                    twoDimensional[x][y].visibility = View.VISIBLE
+                }
+            }
+
+            finished = false
+        }
+
 
         for(item: Int in (0..4)){
             for (item2: Int in(0..4)){
