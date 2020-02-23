@@ -113,16 +113,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun flipLights(view: View,twodimensional : List<List<View>>,row:Int,col:Int,indicator:Array<Array<Int>> ){
-            count ++
-            text = "Clicks: " + count
-            countNumber.setText(text)
-           if(indicator[row][col] == 0) {
-               view.setBackgroundColor(Color.BLACK)
-               indicator[row][col] = 1
-           }else{
-               view.setBackgroundColor(Color.WHITE)
-               indicator[row][col] = 0
-           }
+        count ++
+        text = "Clicks: " + count
+        countNumber.setText(text)
+        if(indicator[row][col] == 0) {
+            view.setBackgroundColor(Color.BLACK)
+            indicator[row][col] = 1
+        }else{
+            view.setBackgroundColor(Color.WHITE)
+            indicator[row][col] = 0
+        }
 
         if(row == 0) when (col){  //top
             0 -> { //left most
