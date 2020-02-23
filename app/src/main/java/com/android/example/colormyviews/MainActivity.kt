@@ -33,8 +33,8 @@ import androidx.appcompat.app.AppCompatActivity
  */
 class MainActivity : AppCompatActivity() {
 
+
     var count = 0
-    var finished = true
     var text = "Clicks: " + count
     lateinit var countNumber:TextView
 
@@ -337,36 +337,33 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        var black = 0
 
         for(i in 0..4){
             for(j in 0..4){
-                if(indicator[i][j] == 0){
-                    finished = false
-                    break
+                if(indicator[i][j] == 1){
+                    black++
                 }
             }
         }
 
-        if(finished){
+        if(black == 25){
             for(x in 0..4){
                 for(y in 0..4){
                     twodimensional[x][y].visibility = View.GONE
                 }
             }
+
+            findViewById<EditText>(R.id.nickname_edit).visibility = View.GONE
+            findViewById<TextView>(R.id.nickname_text).visibility = View.GONE
+            findViewById<Button>(R.id.done_button).visibility = View.GONE
+            findViewById<TextView>(R.id.click_count).visibility = View.GONE
+
         }
     }
 
     private fun retry(twoDimensional : List<List<View>>,indicator:Array<Array<Int>>){
 
-        if(finished){
-            for(x in 0..4){
-                for(y in 0..4){
-                    twoDimensional[x][y].visibility = View.VISIBLE
-                }
-            }
-
-            finished = false
-        }
 
 
         for(item: Int in (0..4)){
@@ -382,6 +379,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         count = 0
+        text = "Clicks: " + count
+        countNumber.setText(text)
+
+
+            for(x in 0..4){
+                for(y in 0..4){
+                    twoDimensional[x][y].visibility = View.VISIBLE
+                }
+            }
+
+            findViewById<EditText>(R.id.nickname_edit).visibility = View.VISIBLE
+            findViewById<Button>(R.id.done_button).visibility = View.VISIBLE
+            findViewById<TextView>(R.id.click_count).visibility = View.VISIBLE
+
     }
 
     private fun changeNickname(view: View) {
