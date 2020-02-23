@@ -6,9 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e41a6477-28e0-4717-be9d-9bd9ab401528" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/example/colormyviews/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/example/colormyviews/MainActivity.kt" afterDir="false" />
-    </list>
+    <list default="true" id="e41a6477-28e0-4717-be9d-9bd9ab401528" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +16,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CBL0218606000256" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -55,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/colormyviews/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1412">
-              <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+            <state relative-caret-position="358">
+              <caret line="364" column="71" selection-start-line="364" selection-start-column="71" selection-end-line="364" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -269,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/colormyviews/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1412">
-          <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+        <state relative-caret-position="358">
+          <caret line="364" column="71" selection-start-line="364" selection-start-column="71" selection-end-line="364" selection-end-column="71" />
         </state>
       </provider>
     </entry>
