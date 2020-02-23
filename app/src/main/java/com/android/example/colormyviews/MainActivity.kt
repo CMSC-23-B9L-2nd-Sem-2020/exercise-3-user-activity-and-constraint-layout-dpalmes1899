@@ -374,7 +374,6 @@ class MainActivity : AppCompatActivity() {
         view.visibility = View.GONE
 
         editText.requestFocus()
-
     }
 }
 
