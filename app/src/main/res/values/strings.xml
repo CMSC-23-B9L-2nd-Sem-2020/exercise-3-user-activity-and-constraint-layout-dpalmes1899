@@ -15,7 +15,7 @@
   -->
 
 <resources>
-    <string name="app_name">ColorMyViews</string>
+    <string name="app_name">Lights Out!</string>
     <string name="box_two"></string>
     <string name="retry">RETRY</string>
     <string name="what_is_your_nickname">What is your Nickname?</string>
