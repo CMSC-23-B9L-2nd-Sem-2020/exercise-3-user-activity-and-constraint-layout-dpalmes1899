@@ -405,6 +405,7 @@
         android:layout_height="wrap_content"
         android:background="#00110D0D"
         android:fontFamily="monospace"
+        android:paddingTop="30dp"
         android:text="LIGHTS OUT!"
         android:textAlignment="center"
         android:textColor="@android:color/white"

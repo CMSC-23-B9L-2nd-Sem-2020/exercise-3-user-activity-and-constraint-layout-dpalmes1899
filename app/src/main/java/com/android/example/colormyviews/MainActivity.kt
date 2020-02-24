@@ -36,13 +36,18 @@ class MainActivity : AppCompatActivity() {
 
     var count = 0
     var text = "Clicks: " + count
+
     lateinit var countNumber:TextView
+    lateinit var title:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         countNumber =  findViewById(R.id.click_count)
+        title = findViewById(R.id.textView2)
+
+
 
         findViewById<Button>(R.id.done_button).setOnClickListener {
             changeNickname(it)
@@ -115,7 +120,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun flipLights(view: View,twodimensional : List<List<View>>,row:Int,col:Int,indicator:Array<Array<Int>> ){
+    private fun flipLights(view: View,twodimensional : List<List<View>>,row:Int,col:Int,indicator:Array<Array<Int>>){
         count ++
         text = "Clicks: " + count
         countNumber.setText(text)
@@ -339,31 +344,14 @@ class MainActivity : AppCompatActivity() {
 
         var black = 0
 
-        for(i in 0..4){
-            for(j in 0..4){
-                if(indicator[i][j] == 1){
-                    black++
-                }
-            }
-        }
 
-        if(black == 25){
-            for(x in 0..4){
-                for(y in 0..4){
-                    twodimensional[x][y].visibility = View.GONE
-                }
-            }
+        for(i in 0..4) for(j in 0..4) if(indicator[i][j] == 1) black += 1
 
-            findViewById<EditText>(R.id.nickname_edit).visibility = View.GONE
-            findViewById<TextView>(R.id.nickname_text).visibility = View.GONE
-            findViewById<Button>(R.id.done_button).visibility = View.GONE
-            findViewById<TextView>(R.id.click_count).visibility = View.GONE
+        if(black == 25) title.setText("You Won! ")
 
-        }
     }
 
     private fun retry(twoDimensional : List<List<View>>,indicator:Array<Array<Int>>){
-
 
 
         for(item: Int in (0..4)){
@@ -383,15 +371,7 @@ class MainActivity : AppCompatActivity() {
         countNumber.setText(text)
 
 
-            for(x in 0..4){
-                for(y in 0..4){
-                    twoDimensional[x][y].visibility = View.VISIBLE
-                }
-            }
 
-            findViewById<EditText>(R.id.nickname_edit).visibility = View.VISIBLE
-            findViewById<Button>(R.id.done_button).visibility = View.VISIBLE
-            findViewById<TextView>(R.id.click_count).visibility = View.VISIBLE
 
     }
 
@@ -418,6 +398,9 @@ class MainActivity : AppCompatActivity() {
         view.visibility = View.GONE
 
         editText.requestFocus()
+
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(editText, 0)
     }
 }
 
