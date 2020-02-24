@@ -347,13 +347,13 @@ class MainActivity : AppCompatActivity() {
 
         for(i in 0..4) for(j in 0..4) if(indicator[i][j] == 1) black += 1
 
-        if(black == 25) title.setText("You Won! ")
+        if(black == 25) title.setText("   You Won! ")
 
     }
 
     private fun retry(twoDimensional : List<List<View>>,indicator:Array<Array<Int>>){
 
-
+        title.setText("LIGHTS OUT! ")
         for(item: Int in (0..4)){
             for (item2: Int in(0..4)){
                 twoDimensional[item][item2].setBackgroundColor(Color.WHITE)
