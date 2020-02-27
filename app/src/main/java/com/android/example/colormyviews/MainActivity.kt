@@ -26,6 +26,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * The colorMyViews app demonstrates how to use a ConstraintLayout using
@@ -38,7 +39,10 @@ class MainActivity : AppCompatActivity() {
     var text = "Clicks: " + count
 
     lateinit var countNumber:TextView
+    lateinit var retryButton:TextView
     lateinit var title:TextView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,16 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         countNumber =  findViewById(R.id.click_count)
         title = findViewById(R.id.textView2)
-
-
-
-        findViewById<Button>(R.id.done_button).setOnClickListener {
-            changeNickname(it)
-        }
-
-        findViewById<TextView>(R.id.nickname_text).setOnClickListener {
-            updateNickname(it)
-        }
+        retryButton = findViewById<TextView>(R.id.retry_button)
 
         setListeners()
 
@@ -92,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         val box23Text = findViewById<TextView>(R.id.box23)
         val box24Text = findViewById<TextView>(R.id.box24)
 
-        val retryButton = findViewById<TextView>(R.id.retry_button)
+
 
         val twoDimensional: List<List<View>> = listOf(
             listOf(boxText, box1Text, box2Text, box3Text, box4Text),
@@ -101,6 +96,15 @@ class MainActivity : AppCompatActivity() {
             listOf(box15Text, box16Text, box17Text, box18Text, box19Text),
             listOf(box20Text, box21Text, box22Text, box23Text, box24Text)
         )
+
+        for(item: Int in (0..4)){
+            for (item2: Int in(0..4)){
+                twoDimensional[item][item2].visibility = View.GONE
+            }
+        }
+        countNumber.visibility = View.GONE
+        retryButton.visibility = View.GONE
+
 
         var indicator: Array<Array<Int>> = arrayOf<Array<Int>>()
         for (i in 0..4) {
@@ -111,7 +115,18 @@ class MainActivity : AppCompatActivity() {
             indicator += array
         }
 
+
+
+        findViewById<Button>(R.id.done_button).setOnClickListener {
+            changeNickname(it,twoDimensional)
+        }
+
+        findViewById<TextView>(R.id.nickname_text).setOnClickListener {
+            updateNickname(it)
+        }
+
         retryButton.setOnClickListener{retry(twoDimensional,indicator)}
+
 
         for(item: Int in (0..4)){
             for (item2: Int in(0..4)){
@@ -347,13 +362,27 @@ class MainActivity : AppCompatActivity() {
 
         for(i in 0..4) for(j in 0..4) if(indicator[i][j] == 1) black += 1
 
-        if(black == 25) title.setText("   You Won! ")
+        if(black == 25) {
+            title.setText("You Won! ")
+            for(item: Int in (0..4)){
+                for (item2: Int in(0..4)){
+                    twodimensional[item][item2].visibility = View.GONE
+                }
+            }
+        }
 
     }
 
     private fun retry(twoDimensional : List<List<View>>,indicator:Array<Array<Int>>){
 
         title.setText("LIGHTS OUT! ")
+        for(item: Int in (0..4)){
+            for (item2: Int in(0..4)){
+                twoDimensional[item][item2].visibility = View.VISIBLE
+            }
+        }
+
+        countNumber.visibility = View.VISIBLE
         for(item: Int in (0..4)){
             for (item2: Int in(0..4)){
                 twoDimensional[item][item2].setBackgroundColor(Color.WHITE)
@@ -375,7 +404,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun changeNickname(view: View) {
+    private fun changeNickname(view: View, twoDimensional: List<List<View>>) {
         val editText = findViewById<EditText>(R.id.nickname_edit)
         val nicknameTextView = findViewById<TextView>(R.id.nickname_text)
 
@@ -384,6 +413,14 @@ class MainActivity : AppCompatActivity() {
         editText.visibility = View.GONE
         view.visibility = View.GONE
         nicknameTextView.visibility = View.VISIBLE
+
+        for(item: Int in (0..4)){
+            for (item2: Int in(0..4)){
+                twoDimensional[item][item2].visibility = View.VISIBLE
+            }
+        }
+
+        retryButton.visibility = View.VISIBLE
 
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
